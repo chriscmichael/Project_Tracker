@@ -7,6 +7,25 @@
     <title>Document</title>
 </head>
 <body>
+    <header>
+        <nav>
+            <ul>
+                {% if user.is_authenticated %}
+                    <li>
+                        <a href="{% url 'list_projects' %}">My projects</a>
+                    </li>
+                    <li>
+                        <a href="{% url 'logout' %}">Logout</a>
+                    </li>
+                {% else %}
+                    <li>
+                        <a href="{% url 'login' %}">Login</a>
+                        <a href="{% url 'signup' %}">Signup</a>
+                    </li>
+                {% endif %}
+            </ul>
+        </nav>
+    </header>
     <main>
         <div>
             <h1>My Projects</h1>
@@ -23,7 +42,7 @@
                 <tbody>
                     {% for project in list_project %}
                     <tr>
-                        <td>{{ project.name }}</td>
+                        <td><a href="{% url 'show_project' project.pk %}">{{ project.name }}</a></td>
                         <td></td>
                     </tr>
                     {% endfor %}
