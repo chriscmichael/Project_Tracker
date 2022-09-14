@@ -7,6 +7,28 @@
     <title>Mine</title>
 </head>
 <body>
+    <header>
+        <nav>
+            <ul>
+                {% if user.is_authenticated %}
+                    <li>
+                        <a href="{% url 'show_my_tasks' %}">My tasks</a>
+                    </li>
+                    <li>
+                        <a href="{% url 'list_projects' %}">My projects</a>
+                    </li>
+                    <li>
+                        <a href="{% url 'logout' %}">Logout</a>
+                    </li>
+                {% else %}
+                    <li>
+                        <a href="{% url 'login' %}">Login</a>
+                        <a href="{% url 'signup' %}">Signup</a>
+                    </li>
+                {% endif %}
+            </ul>
+        </nav>
+    </header>
     <main>
         <div>
             <h1>My Tasks</h1>
@@ -33,7 +55,7 @@
                         <form method="post" action="{% url 'complete_task' task.id %}">
                             {% csrf_token %}
                             <input type="hidden" name="is_completed" value="True">
-
+                            <button>Complete</button>
                         {% else %}
                             {{ assigned.is_completed }}
                         </form>
