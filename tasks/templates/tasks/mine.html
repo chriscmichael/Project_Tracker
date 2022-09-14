@@ -28,7 +28,17 @@
                         <td>{{ assigned.name }}</td>
                         <td>{{ assigned.start_date }}</td>
                         <td>{{ assigned.end_date }}</td>
-                        <td>{{ assigned.is_completed }}</td>
+                        <td>
+                        {% if is_completed is False %}
+                        <form method="post" action="{% url 'complete_task' task.id %}">
+                            {% csrf_token %}
+                            <input type="hidden" name="is_completed" value="True">
+
+                        {% else %}
+                            {{ assigned.is_completed }}
+                        </form>
+                        </td>
+                        {% endif %}
                     </tr>
                     {% endfor %}
                 </tbody>
