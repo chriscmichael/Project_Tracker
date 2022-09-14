@@ -24,19 +24,17 @@
                     <th>Is completed</th>
                 </thead>
                 <tbody>
-                    {% for tasks in project.task.all %}
-                    <tr>
+                     <tr>
+                        {% for tasks in project.tasks.all %}
                         <td>{{ tasks.name }}</td>
                         <td>{{ tasks.assignee }}</td>
                         <td>{{ tasks.start_date }}</td>
                         <td>{{ tasks.due_date }}</td>
                         <td>{{ tasks.is_completed }}</td>
+                        {% endfor %}
                     </tr>
-
                 </tbody>
-                {% endfor %}
             </table>
-
         </div>
     </main>
 
