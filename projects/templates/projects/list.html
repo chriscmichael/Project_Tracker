@@ -29,11 +29,12 @@
                 </ul>
             </nav>
         </header>
-
         <main>
             <div>
                 <h1>My Projects</h1>
-                <p><a href="{% url 'create_project' %}">Create project</p>
+                <p>
+                    <a href="{% url 'create_project' %}">Create project
+                    </p>
                     {% if project_list|length == 0 %}
                         <p>You are not assigned to any projects</p>
                     {% else %}
@@ -47,7 +48,9 @@
                             <tbody>
                                 {% for project in project_list %}
                                     <tr>
-                                        <td><a href="{% url 'show_project' project.pk %}">{{ project.name }}</a></td>
+                                        <td>
+                                            <a href="{% url 'show_project' project.pk %}">{{ project.name }}</a>
+                                        </td>
                                         <td>{{ task.number }}</td>
                                     </tr>
                                 {% endfor %}

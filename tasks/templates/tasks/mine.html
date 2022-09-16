@@ -56,12 +56,12 @@
                                                 {% csrf_token %}
                                                 <input type="hidden" name="is_completed" value="True">
                                                 <button>Complete</button>
-                                        {% else %}
-                                            {{ assigned.is_completed }}
+                                            {% else %}
+                                                {{ assigned.is_completed }}
                                             </form>
-                                            </td>
-                                        {% endif %}
-                                    </tr>
+                                        </td>
+                                    {% endif %}
+                                </tr>
                             {% endfor %}
                         </tbody>
                     </table>
