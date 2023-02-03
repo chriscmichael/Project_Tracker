@@ -1,9 +1,11 @@
 <!DOCTYPE html>
 <html lang="en">
+    {% load static %}
     <head>
         <meta charset="UTF-8">
         <meta http-equiv="X-UA-Compatible" content="IE=edge">
         <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <link rel="stylesheet" type="text/css" href="{% static 'staticfiles/admin/css/index.css' %}">
         <title>Mine</title>
     </head>
     <body>
@@ -70,3 +72,69 @@
         </main>
     </body>
 </html>
+
+{% comment %} .body {
+    font-family: Arial, sans-serif;
+    padding: 0;
+    margin: 0;
+}
+
+.header {
+    background-color: #333;
+    color: #fff;
+    padding: 1em;
+}
+
+.nav ul {
+    list-style: none;
+    margin: 0;
+    padding: 0;
+    display: flex;
+}
+
+.nav a {
+    color: #fff;
+    text-decoration: none;
+    margin-right: 1em;
+}
+
+.main {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 100vh;
+}
+
+.h1 {
+    margin-bottom: 2em;
+}
+
+.table {
+    width: 100%;
+    border-collapse: collapse;
+}
+
+.th,
+.td {
+    border: 1px solid #333;
+    padding: 0.5em 1em;
+    text-align: left;
+}
+
+.th {
+    background-color: #333;
+    color: #fff;
+}
+
+.button {
+    background-color: #333;
+    color: #fff;
+    border: none;
+    padding: 0.5em 1em;
+    cursor: pointer;
+}
+
+.button:hover {
+    background-color: #fff;
+    color: #333;
+} {% endcomment %}
