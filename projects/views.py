@@ -23,4 +23,4 @@ class ProjectCreateView(LoginRequiredMixin, CreateView):
     model = Project
     template_name = "projects/create.html"
     fields = ["name", "description", "members"]
-    success_url = reverse_lazy("show_project")
+    success_url = reverse_lazy("home")
